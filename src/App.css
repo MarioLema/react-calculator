@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: url("./mountains.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#calculator {
+  background: rgba(242, 242, 242, 0.05);
+  border-radius: 10px;
+  padding: 10px;
+  width: 250px;
+  height: 300px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  justify-items: center;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.8), 0px 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+#calculator:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#display {
+  grid-column: 1/5;
+  grid-row: 1/2;
+  border: solid white 0.5px;
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
+  font-family: "Sarpanch", sans-serif;
+  font-weight: 800;
+  font-size: 1.3em;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 5px;
+  overflow: hidden;
+}
+#zero {
+  grid-column: 2/3;
+  grid-row: 6/7;
+}
+#one {
+  grid-column: 1/2;
+  grid-row: 5/6;
+  border-left: solid white 0.5px;
+}
+#two {
+  grid-column: 2/3;
+  grid-row: 5/6;
+}
+#three {
+  grid-column: 3/4;
+  grid-row: 5/6;
+}
+#four {
+  grid-column: 1/2;
+  grid-row: 4/5;
+  border-left: solid white 0.5px;
+}
+#five {
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
+#six {
+  grid-column: 3/4;
+  grid-row: 4/5;
+}
+#seven {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  border-left: solid white 0.5px;
+}
+#eight {
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+#nine {
+  grid-column: 3/4;
+  grid-row: 3/4;
+}
+#add {
+  grid-column: 4/5;
+  grid-row: 2/4;
+}
+#subtract {
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+#multiply {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+#divide {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  border-left: solid white 0.5px;
+}
+#decimal {
+  grid-column: 3/4;
+  grid-row: 6/7;
+}
+#clear {
+  grid-column: 1/2;
+  grid-row: 6/7;
+  border-left: solid white 0.5px;
+  border-radius: 0px 0px 0px 10px;
+}
+#equals {
+  grid-column: 4/5;
+  grid-row: 4/7;
+  border-radius: 0px 0px 10px 0px;
+}
+button {
+  border: none;
+  border-bottom: solid white 0.5px;
+  border-right: solid white 0.5px;
+  background: none;
+  width: 100%;
+  font-family: "Sarpanch", sans-serif;
+  font-weight: 800;
+  font-size: 1.3em;
+  color: white;
+  cursor: pointer;
+}
+button:active {
+  background: radial-gradient(
+    closest-side,
+    rgba(255, 255, 255, 0.3) 0,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+}
