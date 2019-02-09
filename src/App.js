@@ -16,6 +16,7 @@ class App extends Component {
     this.decimal = this.decimal.bind(this);
     this.operator = this.operator.bind(this);
   }
+  //CLEAR FORMULA
   clearAll() {
     this.setState(() => ({
       currentValue: "",
@@ -23,15 +24,17 @@ class App extends Component {
       display: ""
     }));
   }
+  //RESOLVE EQUATION FORMULA
   solveEquation() {
     let newState = { ...this.state };
     newState.formula.push(newState.currentValue);
-    // eslint-disable-next-line
-    newState.currentValue = eval(newState.formula.join("")).toString();
+    /* eslint no-eval: 0 */
+    newState.currentValue = newState.formula.length === 0 ? "" : eval(newState.formula.join("")).toString();
     newState.display = newState.currentValue;
     newState.formula = [];
     this.setState(() => newState);
   }
+  //ADD NUMBER ON BUTTON CLICK
   addNumber(event) {
     let newState = { ...this.state };
     if (
@@ -47,6 +50,7 @@ class App extends Component {
     }
     this.setState(() => newState);
   }
+  //ADD DECIMAL STOP
   decimal() {
     let newState = { ...this.state };
     if (this.state.currentValue.match(/(\.)/) === null) {
@@ -55,6 +59,7 @@ class App extends Component {
     newState.display = newState.formula.join("") + newState.currentValue;
     this.setState(() => newState);
   }
+  //HANDLE OPERATORS +-*/
   operator(event) {
     let newState = { ...this.state };
     if (this.state.currentValue !== "") {
